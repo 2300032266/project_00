@@ -1,0 +1,45 @@
+:root{
+  --bg:#0f1720; --card:#0b1220; --muted:#9aa7bd; --accent:#4b6ef6; --success:#2bb673;
+  --danger:#e65b5b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:linear-gradient(180deg,#0b0f14,#111420);
+  color:#e6eef8;
+  padding:24px;
+}
+.container{
+  width:100%; max-width:760px;
+  background:rgba(255,255,255,0.02);
+  padding:18px; border-radius:10px; box-shadow:0 8px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+h1{margin:0 0 12px;font-size:24px}
+.input-row{display:flex;gap:8px;margin-bottom:12px}
+.input-row input[type="text"]{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.input-row input[type="date"], .input-row input[type="time"]{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.input-row button{padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:white;cursor:pointer}
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:8px;color:var(--muted);font-size:14px}
+.controls button{padding:6px 8px;border-radius:6px;border:0;background:#233040;color:white;cursor:pointer}
+.task-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.task-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+.task-item .left{display:flex;gap:10px;align-items:center}
+.task-item .meta .title{font-weight:600}
+.task-item .meta .datetime{font-size:12px;color:var(--muted)}
+.task-item.completed{opacity:0.6;text-decoration:line-through;color:var(--muted)}
+.actions{display:flex;gap:6px}
+.actions button{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;color:inherit;cursor:pointer}
+.actions button.delete{border-color:rgba(230,91,91,0.2);color:var(--danger)}
+
+/* small screens */
+@media (max-width:520px){
+  .input-row{flex-direction:column}
+  .input-row input, .input-row button{width:100%}
+  .actions{gap:4px}
+}
